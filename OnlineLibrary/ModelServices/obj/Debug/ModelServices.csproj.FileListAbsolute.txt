@@ -60,3 +60,5 @@ E:\OnlineLibrary\WorLdOfBook\OnlineLibrary\ModelServices\bin\Debug\System.Web.We
 E:\OnlineLibrary\WorLdOfBook\OnlineLibrary\ModelServices\obj\Debug\ModelServices.csprojResolveAssemblyReference.cache
 E:\OnlineLibrary\WorLdOfBook\OnlineLibrary\ModelServices\obj\Debug\ModelServices.dll
 E:\OnlineLibrary\WorLdOfBook\OnlineLibrary\ModelServices\obj\Debug\ModelServices.pdb
+E:\OnlineLibrary\WorLdOfBook\OnlineLibrary\ModelServices\bin\Debug\AutoMapper.dll
+E:\OnlineLibrary\WorLdOfBook\OnlineLibrary\ModelServices\bin\Debug\AutoMapper.xml

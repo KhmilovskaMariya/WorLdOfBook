@@ -1,5 +1,6 @@
 ﻿using Core.Models;
 using Data;
+using ModelServices;
 using Ninject;
 using Services;
 using System;
@@ -33,6 +34,7 @@ namespace OnlineLibrary.Util
             kernel.Bind<IRepository<ApplicationUser>>().ToMethod(m => unitOfWork.Repository<ApplicationUser>());
             kernel.Bind<IDbContext>().To<LibraryContext>();
             kernel.Bind<IUserService>().To<UserService>();
+            kernel.Bind<IModeratorViewModelService>().To<ModeratorViewModelService>();
         }
     }
 }

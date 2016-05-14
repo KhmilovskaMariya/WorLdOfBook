@@ -6,10 +6,10 @@ namespace Utils
 {
     public class AutoMapperConfig
     {
-        public static void RegisterMappings()
-        {
-            Mapper.CreateMap<ReaderModeratorViewModel, ApplicationUser>()
-                .ForMember();
+        public static void RegisterMappings()        {
+            Mapper.Initialize(cfg => {
+                cfg.CreateMap<ApplicationUser, ReaderModeratorViewModel>();
+            });
         }
     }
 }

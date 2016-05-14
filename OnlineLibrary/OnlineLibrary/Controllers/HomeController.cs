@@ -21,15 +21,11 @@ namespace OnlineLibrary.Controllers
 
         public ActionResult Index()
         {
-            var a = _userService.GetAllUsers();
-            var b = a;
+            if(User.IsInRole("Administrator"))
+            {
+                return RedirectToAction("Index", "Moderator");
+            }
 
-            var c = User.Identity.Name;
-            var d = c;
-
-            var um = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(new LibraryContext()));
-            var inrole = um.IsInRole(User.Identity.GetUserId(), "Administrator");
-            var r = inrole;
 
 
             if (User.IsInRole("Administrator"))
