@@ -25,6 +25,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ControllerTests", "Controll
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestHelpers", "TestHelpers\TestHelpers.csproj", "{62328D95-63F3-411F-A4C6-6D2E407EFC48}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utils", "Utils\Utils.csproj", "{434D890F-5D66-430D-BDE6-F98E96D3BAD0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -55,6 +57,10 @@ Global
 		{62328D95-63F3-411F-A4C6-6D2E407EFC48}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{62328D95-63F3-411F-A4C6-6D2E407EFC48}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{62328D95-63F3-411F-A4C6-6D2E407EFC48}.Release|Any CPU.Build.0 = Release|Any CPU
+		{434D890F-5D66-430D-BDE6-F98E96D3BAD0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{434D890F-5D66-430D-BDE6-F98E96D3BAD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{434D890F-5D66-430D-BDE6-F98E96D3BAD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{434D890F-5D66-430D-BDE6-F98E96D3BAD0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

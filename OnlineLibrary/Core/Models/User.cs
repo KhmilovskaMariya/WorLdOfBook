@@ -10,6 +10,7 @@ namespace Core.Models
     {
         public virtual List<Book> Books { get; set; }
         public virtual List<Comment> Comments { get; set; }
+        public bool IsAuthor { get; set; }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {

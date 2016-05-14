@@ -205,7 +205,6 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
-    <Compile Include="Util\AutoMapperConfig.cs" />
     <Compile Include="Util\NinjectDependencyResolver.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -292,6 +291,10 @@
     <ProjectReference Include="..\Services\Services.csproj">
       <Project>{4d69c60a-e705-4112-98d6-48a1250ddb8c}</Project>
       <Name>Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utils\Utils.csproj">
+      <Project>{434d890f-5d66-430d-bde6-f98e96d3bad0}</Project>
+      <Name>Utils</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

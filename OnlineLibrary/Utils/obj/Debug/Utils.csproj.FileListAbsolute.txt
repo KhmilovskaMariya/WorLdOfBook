@@ -1,0 +1,7 @@
+E:\OnlineLibrary\WorLdOfBook\OnlineLibrary\Utils\bin\Debug\Utils.dll
+E:\OnlineLibrary\WorLdOfBook\OnlineLibrary\Utils\bin\Debug\Utils.pdb
+E:\OnlineLibrary\WorLdOfBook\OnlineLibrary\Utils\bin\Debug\AutoMapper.dll
+E:\OnlineLibrary\WorLdOfBook\OnlineLibrary\Utils\bin\Debug\AutoMapper.xml
+E:\OnlineLibrary\WorLdOfBook\OnlineLibrary\Utils\obj\Debug\Utils.csprojResolveAssemblyReference.cache
+E:\OnlineLibrary\WorLdOfBook\OnlineLibrary\Utils\obj\Debug\Utils.dll
+E:\OnlineLibrary\WorLdOfBook\OnlineLibrary\Utils\obj\Debug\Utils.pdb

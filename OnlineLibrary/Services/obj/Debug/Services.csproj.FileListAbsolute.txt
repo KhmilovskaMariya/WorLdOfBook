@@ -27,3 +27,32 @@ C:\Users\Akio\Documents\Visual Studio 2015\Projects\OnlineLibrary\Services\bin\D
 C:\Users\Akio\Documents\Visual Studio 2015\Projects\OnlineLibrary\Services\obj\Debug\Services.csprojResolveAssemblyReference.cache
 C:\Users\Akio\Documents\Visual Studio 2015\Projects\OnlineLibrary\Services\obj\Debug\Services.dll
 C:\Users\Akio\Documents\Visual Studio 2015\Projects\OnlineLibrary\Services\obj\Debug\Services.pdb
+E:\OnlineLibrary\WorLdOfBook\OnlineLibrary\Services\bin\Debug\Services.dll
+E:\OnlineLibrary\WorLdOfBook\OnlineLibrary\Services\bin\Debug\Services.pdb
+E:\OnlineLibrary\WorLdOfBook\OnlineLibrary\Services\bin\Debug\Core.dll
+E:\OnlineLibrary\WorLdOfBook\OnlineLibrary\Services\bin\Debug\Data.dll
+E:\OnlineLibrary\WorLdOfBook\OnlineLibrary\Services\bin\Debug\System.Web.Mvc.dll
+E:\OnlineLibrary\WorLdOfBook\OnlineLibrary\Services\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+E:\OnlineLibrary\WorLdOfBook\OnlineLibrary\Services\bin\Debug\Microsoft.Owin.dll
+E:\OnlineLibrary\WorLdOfBook\OnlineLibrary\Services\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+E:\OnlineLibrary\WorLdOfBook\OnlineLibrary\Services\bin\Debug\EntityFramework.dll
+E:\OnlineLibrary\WorLdOfBook\OnlineLibrary\Services\bin\Debug\System.Web.Razor.dll
+E:\OnlineLibrary\WorLdOfBook\OnlineLibrary\Services\bin\Debug\System.Web.WebPages.Razor.dll
+E:\OnlineLibrary\WorLdOfBook\OnlineLibrary\Services\bin\Debug\System.Web.WebPages.dll
+E:\OnlineLibrary\WorLdOfBook\OnlineLibrary\Services\bin\Debug\Microsoft.Web.Infrastructure.dll
+E:\OnlineLibrary\WorLdOfBook\OnlineLibrary\Services\bin\Debug\Owin.dll
+E:\OnlineLibrary\WorLdOfBook\OnlineLibrary\Services\bin\Debug\System.Web.WebPages.Deployment.dll
+E:\OnlineLibrary\WorLdOfBook\OnlineLibrary\Services\bin\Debug\Core.pdb
+E:\OnlineLibrary\WorLdOfBook\OnlineLibrary\Services\bin\Debug\Data.pdb
+E:\OnlineLibrary\WorLdOfBook\OnlineLibrary\Services\bin\Debug\System.Web.Mvc.xml
+E:\OnlineLibrary\WorLdOfBook\OnlineLibrary\Services\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+E:\OnlineLibrary\WorLdOfBook\OnlineLibrary\Services\bin\Debug\Microsoft.Owin.xml
+E:\OnlineLibrary\WorLdOfBook\OnlineLibrary\Services\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+E:\OnlineLibrary\WorLdOfBook\OnlineLibrary\Services\bin\Debug\EntityFramework.xml
+E:\OnlineLibrary\WorLdOfBook\OnlineLibrary\Services\bin\Debug\System.Web.Razor.xml
+E:\OnlineLibrary\WorLdOfBook\OnlineLibrary\Services\bin\Debug\System.Web.WebPages.Razor.xml
+E:\OnlineLibrary\WorLdOfBook\OnlineLibrary\Services\bin\Debug\System.Web.WebPages.xml
+E:\OnlineLibrary\WorLdOfBook\OnlineLibrary\Services\bin\Debug\System.Web.WebPages.Deployment.xml
+E:\OnlineLibrary\WorLdOfBook\OnlineLibrary\Services\obj\Debug\Services.csprojResolveAssemblyReference.cache
+E:\OnlineLibrary\WorLdOfBook\OnlineLibrary\Services\obj\Debug\Services.dll
+E:\OnlineLibrary\WorLdOfBook\OnlineLibrary\Services\obj\Debug\Services.pdb
