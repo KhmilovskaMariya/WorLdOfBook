@@ -2,25 +2,26 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<div class="container">
+    <ul class="nav nav-tabs">
+        <li class="active"><a data-toggle="tab" href="#readers">Readers</a></li>
+        <li><a data-toggle="tab" href="#authors">Authors</a></li>
+        <li><a data-toggle="tab" href="#books">Books</a></li>
+        <li><a data-toggle="tab" href="#comments">Comments</a></li>
+    </ul>
 
-<ul class="nav nav-tabs">
-    <li class="active"><a data-toggle="tab" href="#readers">Readers</a></li>
-    <li><a data-toggle="tab" href="#authors">Authors</a></li>
-    <li><a data-toggle="tab" href="#books">Books</a></li>
-    <li><a data-toggle="tab" href="#comments">Commentss</a></li>
-</ul>
-
-<div class="tab-content">
-    <div id="readers" class="tab-pane fade in active">
-        @{ Html.RenderAction("Readers"); }
-    </div>
-    <div id="authors" class="tab-pane fade">
-        @{ Html.RenderAction("Authors"); }
-    </div>
-    <div id="books" class="tab-pane fade">
-        @{ Html.RenderAction("Books"); }
-    </div>
-    <div id="comments" class="tab-pane fade">
-        @{ Html.RenderAction("Comments"); }
+    <div class="tab-content">
+        <div id="readers" class="tab-pane fade in active">
+            @{ Html.RenderAction("Readers"); }
+        </div>
+        <div id="authors" class="tab-pane fade">
+            @{ Html.RenderAction("Authors"); }
+        </div>
+        <div id="books" class="tab-pane fade">
+            @{ Html.RenderAction("Books"); }
+        </div>
+        <div id="comments" class="tab-pane fade">
+            @{ Html.RenderAction("Comments"); }
+        </div>
     </div>
 </div>

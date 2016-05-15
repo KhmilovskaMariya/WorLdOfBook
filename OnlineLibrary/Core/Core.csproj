@@ -102,12 +102,17 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\AccountViewModels.cs" />
     <Compile Include="ViewModels\AddBookViewModel.cs" />
+    <Compile Include="ViewModels\AdminUserProfileViewModel.cs" />
     <Compile Include="ViewModels\AdminUserViewModel.cs" />
     <Compile Include="ViewModels\AuthorBookViewModel.cs" />
     <Compile Include="ViewModels\AuthorModeratorViewModel.cs" />
+    <Compile Include="ViewModels\BookViewModel.cs" />
+    <Compile Include="ViewModels\CommentViewModel.cs" />
     <Compile Include="ViewModels\ManageViewModels.cs" />
     <Compile Include="ViewModels\ModeratorBookViewModel.cs" />
     <Compile Include="ViewModels\ModeratorCommentViewModel.cs" />
+    <Compile Include="ViewModels\PopularBookViewModel.cs" />
+    <Compile Include="ViewModels\RateViewModel.cs" />
     <Compile Include="ViewModels\ReaderModeratorViewModel.cs" />
     <Compile Include="ViewModels\UserProfileForModeratorView.cs" />
     <Compile Include="ViewModels\UserProfileViewModel.cs" />

@@ -53,5 +53,23 @@ namespace ModelServices
             book.Status = isAccepted ? BookStatus.Confirmed : BookStatus.Declined;
             _bookRepository.Update(book);
         }
+
+        public List<PopularBookViewModel> GetMostPopularBooks(int count)
+        {
+            return Mapper.Map<IEnumerable<Book>, List<PopularBookViewModel>>(_bookRepository.Set.Where(b => b.Status == BookStatus.Confirmed).OrderBy(b => b.Rating).Take(count));
+        }
+
+        public BookViewModel GetBook(int id)
+        {
+            return Mapper.Map<Book, BookViewModel>(_bookRepository.GetById(id));
+        }
+
+        public void RateBook(int id, int rateMark)
+        {
+            var book = _bookRepository.GetById(id);
+            book.RatingMarks.Add(rateMark);
+            book.Rating = (int)book.RatingMarks.Average();
+            _bookRepository.Update(book);
+        }
     }
 }

@@ -27,5 +27,15 @@ namespace OnlineLibrary.Controllers
         {
             return View();
         }
+
+        public ActionResult EditProfile()
+        {
+            return View(_userViewModelService.GetUser(User.Identity.GetUserId()));
+        }
+
+        public ActionResult GetProfileForAdmin(string userId)
+        {
+            return View(_userViewModelService.GetUserForAdmin(userId));
+        }
     }
 }

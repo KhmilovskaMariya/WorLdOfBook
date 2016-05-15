@@ -277,9 +277,15 @@
     <Content Include="Views\Author\AllAuthorsBook.cshtml" />
     <Content Include="Views\Moderator\Books.cshtml" />
     <Content Include="Views\Moderator\Comments.cshtml" />
+    <Content Include="Views\Book\MostPopularBooks.cshtml" />
+    <Content Include="Views\Book\Book.cshtml" />
+    <Content Include="Views\Book\RateBook.cshtml" />
+    <Content Include="Views\Reader\EditProfile.cshtml" />
+    <Content Include="Views\Reader\GetProfileForAdmin.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\Images\" />
     <Folder Include="Views\File\" />
   </ItemGroup>
   <ItemGroup>

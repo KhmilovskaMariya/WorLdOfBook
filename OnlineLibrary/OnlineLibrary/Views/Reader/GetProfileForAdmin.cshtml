@@ -1,0 +1,40 @@
+﻿@model Core.ViewModels.AdminUserProfileViewModel
+
+<div class="container">
+    <h2>Profile</h2>
+
+    <div>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.UserName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.UserName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Email)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Email)
+            </dd>
+
+            @if (Model.Avatar != null)
+            {
+                <dt>
+                    Avatar
+                </dt>
+                <dd>
+                    <img src="~/File?id=@Model.Avatar.FileId" alt="avatar" />
+                </dd>
+            }
+            <dt>
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Back To List", "Index", "Admin") 
+    </p>
+</div>

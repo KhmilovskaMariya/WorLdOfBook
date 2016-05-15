@@ -25,5 +25,10 @@ namespace ModelServices
         {
             return Mapper.Map<ApplicationUser, UserProfileViewModel>(_userRepository.GetById(userId));
         }
+
+        public AdminUserProfileViewModel GetUserForAdmin(string userId)
+        {
+            return Mapper.Map<ApplicationUser, AdminUserProfileViewModel>(_userRepository.GetById(userId));
+        }
     }
 }

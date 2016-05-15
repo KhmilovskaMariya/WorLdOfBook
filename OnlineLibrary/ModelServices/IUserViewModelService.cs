@@ -10,5 +10,6 @@ namespace ModelServices
     public interface IUserViewModelService
     {
         UserProfileViewModel GetUser(string userId);
+        AdminUserProfileViewModel GetUserForAdmin(string userId);
     }
 }

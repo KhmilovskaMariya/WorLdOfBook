@@ -13,5 +13,8 @@ namespace ModelServices
         List<AuthorBookViewModel> GetAllAuthorsBook(string userId);
         List<ModeratorBookViewModel> GetAllBooksForModerators();
         void AcceptDeclineBook(int id, bool isAccepted);
+        List<PopularBookViewModel> GetMostPopularBooks(int count);
+        BookViewModel GetBook(int id);
+        void RateBook(int id, int rateMark);
     }
 }

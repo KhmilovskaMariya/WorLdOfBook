@@ -1,0 +1,20 @@
+﻿@model IEnumerable<Core.ViewModels.PopularBookViewModel>
+
+<div class="most-popular-book-container">
+    <div class="container">
+        <h2>Most Popular</h2>
+        @foreach (var item in Model)
+        {
+            <div class="col-sm-4 popular-book-item">
+                <div>
+                    <div>
+                        <img src="~/File?id=@item.Image.FileId" alt="imageBook" />
+                    </div>
+                    <h3>@item.Title</h3>
+                    <p>@item.Decription</p>
+                </div>
+                <a href="@Url.Action("Book", "Book", new { id=item.Id })">Read More</a>
+            </div>
+        }
+    </div>
+</div>

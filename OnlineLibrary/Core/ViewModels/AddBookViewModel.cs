@@ -17,5 +17,6 @@ namespace Core.ViewModels
         public int YearOfPublication { get; set; }
         public virtual string AuthorId { get; set; }
         public virtual File Image { get; set; }
+        public string Description { get; set; }
     }
 }

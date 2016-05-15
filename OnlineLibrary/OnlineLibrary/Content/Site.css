@@ -22,3 +22,55 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.home-background-image img {
+    width: 100%;
+}
+
+.popular-book-item h3 {
+    font-size: 24px;
+}
+
+.popular-book-item {
+    text-align: left;
+}
+
+.popular-book-item img {
+    width: 100%;
+}
+
+.popular-book-item p {
+    font-size: 18px;
+}
+
+.popular-book-item a {
+    font-size: 18px;
+    text-decoration: none;
+    background: rgb(69, 179, 158);
+    color: white;
+    display: inline-block;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    margin-top: 17px;
+    margin-bottom: 20px;
+    padding: 6px 13px;
+}
+
+.popular-book-item a:hover {
+    color: rgb(69, 179, 158);
+    background: rgb(51, 51, 51);
+}
+
+.most-popular-book-container {
+    font-size: 48px;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background: rgb(237, 234, 230);
+}
+
+.popular-book-item div:first-child {
+    width: 90%;
+    margin: 0 auto;
+}

@@ -1,0 +1,59 @@
+﻿@model Core.ViewModels.BookViewModel
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Language)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Language)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Edition)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Edition)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.YearOfPublication)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.YearOfPublication)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Rating)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Rating)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Author.UserName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Author.UserName)
+        </dd>
+        <dd>
+            <img src="~/File?id=@Model.Image.FileId" alt="avatar" />
+        </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Rate Book", "RateBook", new { id = Model.Id }) |
+    @Html.ActionLink("Comment Book", "CommentBook", new { bookId = Model.Id, userId = Model.Author.Id })
+</p>

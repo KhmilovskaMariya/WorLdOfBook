@@ -29,5 +29,7 @@ namespace Data
         {
             base.SaveChanges();          
         }
+
+        public System.Data.Entity.DbSet<Core.ViewModels.UserProfileViewModel> UserProfileViewModels { get; set; }
     }
 }

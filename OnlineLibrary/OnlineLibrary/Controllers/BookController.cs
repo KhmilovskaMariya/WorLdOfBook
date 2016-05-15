@@ -14,11 +14,14 @@ namespace OnlineLibrary.Controllers
     {
         private readonly IUserService _userService;
         private readonly IBookViewModelService _bookViewModelService;
+        private readonly ICommentViewModelService _commentViewModelService;
 
-        public BookController(IUserService userService, IBookViewModelService bookViewModelService)
+        public BookController(IUserService userService, IBookViewModelService bookViewModelService,
+            ICommentViewModelService commentViewModelService)
         {
             _userService = userService;
             _bookViewModelService = bookViewModelService;
+            _commentViewModelService = commentViewModelService;
         }
 
         // GET: Book
@@ -56,6 +59,43 @@ namespace OnlineLibrary.Controllers
                 return RedirectToAction("Profile", "Author");
             }
             return View(model);
+        }
+
+
+        public PartialViewResult MostPopularBooks()
+        {
+            return PartialView(_bookViewModelService.GetMostPopularBooks(3));
+        }
+
+        public ActionResult Book(int id)
+        {
+            return View(_bookViewModelService.GetBook(id));
+        }
+
+        [HttpGet]
+        public ActionResult RateBook(int id)
+        {
+            return View(new RateViewModel { Id = id });
+        }
+
+        [HttpPost]
+        public ActionResult RateBook(RateViewModel model)
+        {
+            _bookViewModelService.RateBook(model.Id, model.RateMark);
+            return RedirectToAction("Book", new { id = model.Id });
+        }
+
+        [HttpGet]
+        public ActionResult CommentBook(int bookId, string userId)
+        {
+            return View(new CommentViewModel { UserId = userId, BookId = bookId });
+        }
+
+        [HttpPost]
+        public ActionResult CommentBook(CommentViewModel model)
+        {
+            _commentViewModelService.CommentBook(model);
+            return RedirectToAction("Book", new { id = model.BookId });
         }
     }
 }

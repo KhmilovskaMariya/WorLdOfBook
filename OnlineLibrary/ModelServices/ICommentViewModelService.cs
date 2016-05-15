@@ -10,5 +10,6 @@ namespace ModelServices
     public interface ICommentViewModelService
     {
         List<ModeratorCommentViewModel> GetAllCommentsSortedByDateForLastWeek();
+        void CommentBook(CommentViewModel model);
     }
 }
