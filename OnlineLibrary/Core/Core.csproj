@@ -106,6 +106,8 @@
     <Compile Include="ViewModels\AuthorBookViewModel.cs" />
     <Compile Include="ViewModels\AuthorModeratorViewModel.cs" />
     <Compile Include="ViewModels\ManageViewModels.cs" />
+    <Compile Include="ViewModels\ModeratorBookViewModel.cs" />
+    <Compile Include="ViewModels\ModeratorCommentViewModel.cs" />
     <Compile Include="ViewModels\ReaderModeratorViewModel.cs" />
     <Compile Include="ViewModels\UserProfileForModeratorView.cs" />
     <Compile Include="ViewModels\UserProfileViewModel.cs" />

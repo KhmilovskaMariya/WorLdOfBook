@@ -3,6 +3,7 @@ using Core.Common;
 using Core.Models;
 using Core.ViewModels;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Utils
 {
@@ -18,6 +19,9 @@ namespace Utils
                     .ForMember(d => d.Status, opt => opt.MapFrom(s => BookStatus.New))
                     .ForMember(d => d.Comments, opt => opt.MapFrom(s => new List<Comment>()));
                 cfg.CreateMap<Book, AuthorBookViewModel>();
+                cfg.CreateMap<Book, ModeratorBookViewModel>()
+                    .ForMember(d => d.Author, opt => opt.MapFrom(src => src.Users.FirstOrDefault(u => u.Status == UserStatus.Author)));
+                cfg.CreateMap<Comment, ModeratorCommentViewModel>();
             });
         }
     }

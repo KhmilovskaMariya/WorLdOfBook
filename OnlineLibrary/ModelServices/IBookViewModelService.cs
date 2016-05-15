@@ -11,5 +11,7 @@ namespace ModelServices
     {
         void AddBook(AddBookViewModel model);
         List<AuthorBookViewModel> GetAllAuthorsBook(string userId);
+        List<ModeratorBookViewModel> GetAllBooksForModerators();
+        void AcceptDeclineBook(int id, bool isAccepted);
     }
 }

@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Core.Common;
 using Core.Models;
 using Core.ViewModels;
 using Data;
@@ -39,6 +40,18 @@ namespace ModelServices
         public List<AuthorBookViewModel> GetAllAuthorsBook(string userId)
         {
             return Mapper.Map<List<Book>, List<AuthorBookViewModel>>(_userRepository.GetById(userId).Books);
+        }
+
+        public List<ModeratorBookViewModel> GetAllBooksForModerators()
+        {
+            return Mapper.Map<IEnumerable<Book>, List<ModeratorBookViewModel>>(_bookRepository.Set.Where(b => b.Status == BookStatus.New));
+        }
+
+        public void AcceptDeclineBook(int id, bool isAccepted)
+        {
+            var book = _bookRepository.GetById(id);
+            book.Status = isAccepted ? BookStatus.Confirmed : BookStatus.Declined;
+            _bookRepository.Update(book);
         }
     }
 }

@@ -39,6 +39,8 @@ namespace OnlineLibrary.Util
             kernel.Bind<IRepository<File>>().ToMethod(m => unitOfWork.Repository<File>());
             kernel.Bind<IUserViewModelService>().To<UserViewModelService>();
             kernel.Bind<IBookViewModelService>().To<BookViewModelService>();
+            kernel.Bind<ICommentService>().To<CommentService>();
+            kernel.Bind<ICommentViewModelService>().To<CommentViewModelService>();
         }
     }
 }

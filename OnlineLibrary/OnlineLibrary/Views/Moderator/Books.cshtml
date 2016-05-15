@@ -1,0 +1,50 @@
+﻿@model IEnumerable<Core.ViewModels.ModeratorBookViewModel>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Author.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Edition)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Language)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.YearOfPublication)
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Author.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Edition)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Language)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.YearOfPublication)
+            </td>
+            <td>
+                <img src="~/File?id=@item.Image.FileId" alt="avatar" />
+            </td>
+            <td>
+                @Html.ActionLink("Accept", "AcceptDeclineBook", new { id = item.Id, isAccepted=true }) |
+                @Html.ActionLink("Decline", "AcceptDeclineBook", new { id = item.Id, IsAccepted=false })
+            </td>
+        </tr>
+    }
+</table>
+

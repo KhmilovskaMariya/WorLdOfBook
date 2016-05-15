@@ -46,8 +46,10 @@
   <ItemGroup>
     <Compile Include="AdminUserViewModelService.cs" />
     <Compile Include="BookViewModelService.cs" />
+    <Compile Include="CommentViewModelService.cs" />
     <Compile Include="IAdminUserViewModelService.cs" />
     <Compile Include="IBookViewModelService.cs" />
+    <Compile Include="ICommentViewModelService.cs" />
     <Compile Include="IModeratorViewModelService.cs" />
     <Compile Include="IUserViewModelService.cs" />
     <Compile Include="ModeratorViewModelService.cs" />
