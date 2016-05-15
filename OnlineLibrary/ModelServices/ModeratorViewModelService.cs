@@ -1,12 +1,10 @@
 ﻿using AutoMapper;
+using Core.Common;
 using Core.Models;
 using Core.ViewModels;
 using Data;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ModelServices
 {
@@ -23,7 +21,19 @@ namespace ModelServices
 
         public List<ReaderModeratorViewModel> GetAllReaders()
         {
-            return Mapper.Map<IEnumerable<ApplicationUser>, List<ReaderModeratorViewModel>>(_userRepository.Set.Where(u => u.IsAuthor == false));
+            return Mapper.Map<IEnumerable<ApplicationUser>, List<ReaderModeratorViewModel>>(_userRepository.Set.Where(u => u.Status == UserStatus.Reader));
+        }
+
+        public List<AuthorModeratorViewModel> GetAllAuthors()
+        {
+            return Mapper.Map<IEnumerable<ApplicationUser>, List<AuthorModeratorViewModel>>(_userRepository.Set.Where(u => u.Status == UserStatus.Author));
+        }
+
+        public void BanUnbanUser(string userId, bool isBan)
+        {
+            var user = _userRepository.GetById(userId);
+            user.IsBanned = isBan;
+            _dbContext.SaveChanges();
         }
     }
 }

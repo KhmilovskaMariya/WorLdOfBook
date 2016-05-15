@@ -1,4 +1,5 @@
-﻿using Services;
+﻿using ModelServices;
+using Services;
 using System.Web.Mvc;
 
 namespace OnlineLibrary.Controllers
@@ -6,10 +7,12 @@ namespace OnlineLibrary.Controllers
     public class AdminController : Controller
     {
         private readonly IUserService _userService;
+        private readonly IAdminUserViewModelService _adminUserViewModelService;
 
-        public AdminController(IUserService userService)
+        public AdminController(IUserService userService, IAdminUserViewModelService adminUserViewModelService)
         {
-            _userService = userService;          
+            _userService = userService;
+            _adminUserViewModelService = adminUserViewModelService;
         }
 
         // GET: Admin

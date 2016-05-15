@@ -6,5 +6,7 @@ namespace Services
     public interface IUserService
     {
         List<ApplicationUser> GetAllUsers();
+        void DeleteUser(string userId);
+        ApplicationUser GetUser(string userId);
     }
 }

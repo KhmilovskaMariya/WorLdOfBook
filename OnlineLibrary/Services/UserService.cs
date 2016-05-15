@@ -20,5 +20,16 @@ namespace Services
         {
             return _userRepository.Set.ToList();
         }
+
+        public void DeleteUser(string userId)
+        {
+            _userRepository.Delete(_userRepository.GetById(userId));
+        }
+
+        public ApplicationUser GetUser(string userId)
+        {
+            var user = _userRepository.GetById(userId);
+            return user;
+        }
     }
 }

@@ -58,8 +58,7 @@ E:\OnlineLibrary\WorLdOfBook\OnlineLibrary\Data\bin\Debug\System.Web.WebPages.Ra
 E:\OnlineLibrary\WorLdOfBook\OnlineLibrary\Data\bin\Debug\System.Web.WebPages.xml
 E:\OnlineLibrary\WorLdOfBook\OnlineLibrary\Data\bin\Debug\System.Web.WebPages.Deployment.xml
 E:\OnlineLibrary\WorLdOfBook\OnlineLibrary\Data\obj\Debug\Data.csprojResolveAssemblyReference.cache
-E:\OnlineLibrary\WorLdOfBook\OnlineLibrary\Data\obj\Debug\Data.Migrations.first.resources
-E:\OnlineLibrary\WorLdOfBook\OnlineLibrary\Data\obj\Debug\Data.csproj.GenerateResource.Cache
 E:\OnlineLibrary\WorLdOfBook\OnlineLibrary\Data\obj\Debug\Data.dll
 E:\OnlineLibrary\WorLdOfBook\OnlineLibrary\Data\obj\Debug\Data.pdb
-E:\OnlineLibrary\WorLdOfBook\OnlineLibrary\Data\obj\Debug\Data.Migrations.second.resources
+E:\OnlineLibrary\WorLdOfBook\OnlineLibrary\Data\obj\Debug\Data.Migrations.fourth.resources
+E:\OnlineLibrary\WorLdOfBook\OnlineLibrary\Data\obj\Debug\Data.csproj.GenerateResource.Cache

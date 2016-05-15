@@ -55,6 +55,6 @@ E:\OnlineLibrary\WorLdOfBook\OnlineLibrary\Core\bin\Debug\System.Web.Razor.xml
 E:\OnlineLibrary\WorLdOfBook\OnlineLibrary\Core\bin\Debug\System.Web.WebPages.xml
 E:\OnlineLibrary\WorLdOfBook\OnlineLibrary\Core\bin\Debug\System.Web.WebPages.Deployment.xml
 E:\OnlineLibrary\WorLdOfBook\OnlineLibrary\Core\bin\Debug\System.Web.WebPages.Razor.xml
-E:\OnlineLibrary\WorLdOfBook\OnlineLibrary\Core\obj\Debug\Core.csprojResolveAssemblyReference.cache
 E:\OnlineLibrary\WorLdOfBook\OnlineLibrary\Core\obj\Debug\Core.dll
 E:\OnlineLibrary\WorLdOfBook\OnlineLibrary\Core\obj\Debug\Core.pdb
+E:\OnlineLibrary\WorLdOfBook\OnlineLibrary\Core\obj\Debug\Core.csprojResolveAssemblyReference.cache

@@ -1,4 +1,5 @@
-﻿using Core.Models;
+﻿using Core.Common;
+using Core.Models;
 using Data;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
@@ -21,17 +22,22 @@ namespace OnlineLibrary.Controllers
 
         public ActionResult Index()
         {
-            if(User.IsInRole("Administrator"))
+            if (User.IsInRole("Moderator"))
             {
                 return RedirectToAction("Index", "Moderator");
             }
-
-
-
             if (User.IsInRole("Administrator"))
-                RedirectToAction("Index", "Admin");
-            if (User.IsInRole("1"))
-                RedirectToAction("Index", "Admin");
+            {
+                return RedirectToAction("Index", "Admin");
+            }
+            if (_userService.GetUser(User.Identity.GetUserId())?.Status == UserStatus.Reader)
+            {
+                return RedirectToAction("Profile", "Reader");
+            }
+            if(_userService.GetUser(User.Identity.GetUserId())?.Status == UserStatus.Author)
+            {
+                return RedirectToAction("Profile", "Author");
+            }
             return View();
         }
 

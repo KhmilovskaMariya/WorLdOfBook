@@ -13,5 +13,6 @@ namespace Core.Models
         public int YearOfPublication { get; set; }
         public virtual List<Comment> Comments { get; set; }
         public virtual List<ApplicationUser> Users { get; set; }
+        public virtual File Image { get; set; }
     }
 }

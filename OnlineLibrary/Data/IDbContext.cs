@@ -5,5 +5,6 @@ namespace Data
     public interface IDbContext
     {
         IDbSet<T> Set<T>() where T : class;
+        void SaveChanges();
     }
 }

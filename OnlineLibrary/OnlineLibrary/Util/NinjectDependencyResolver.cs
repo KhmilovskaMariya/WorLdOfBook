@@ -35,6 +35,10 @@ namespace OnlineLibrary.Util
             kernel.Bind<IDbContext>().To<LibraryContext>();
             kernel.Bind<IUserService>().To<UserService>();
             kernel.Bind<IModeratorViewModelService>().To<ModeratorViewModelService>();
+            kernel.Bind<IAdminUserViewModelService>().To<AdminUserViewModelService>();
+            kernel.Bind<IRepository<File>>().ToMethod(m => unitOfWork.Repository<File>());
+            kernel.Bind<IUserViewModelService>().To<UserViewModelService>();
+            kernel.Bind<IBookViewModelService>().To<BookViewModelService>();
         }
     }
 }

@@ -8,6 +8,7 @@ namespace Data
     {
         public DbSet<Comment> Comments { get; set; }
         public DbSet<Book> Books { get; set; }
+        public DbSet<File> Files { get; set; }
 
         public LibraryContext()
             : base("DefaultConnection", throwIfV1Schema: false)
@@ -22,6 +23,11 @@ namespace Data
         public new IDbSet<T> Set<T>() where T : class
         {
             return base.Set<T>();
+        }
+
+        public void SaveChanges()
+        {
+            base.SaveChanges();          
         }
     }
 }

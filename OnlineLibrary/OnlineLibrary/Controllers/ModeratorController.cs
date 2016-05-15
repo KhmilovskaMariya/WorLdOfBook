@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 
 namespace OnlineLibrary.Controllers
 {
@@ -17,11 +18,36 @@ namespace OnlineLibrary.Controllers
         }
 
         // GET: Moderator
+        [Authorize(Roles = "Moderator")]
         public ActionResult Index()
         {
-            var a = _moderatorViewModelService.GetAllReaders();
-            var b = a;
             return View();
+        }
+
+        public PartialViewResult Readers()
+        {
+            return PartialView(_moderatorViewModelService.GetAllReaders());
+        }
+
+        public PartialViewResult Authors()
+        {
+            return PartialView(_moderatorViewModelService.GetAllAuthors());
+        }
+
+
+        [Authorize(Roles = "Moderator")]
+        public ActionResult Ban(string id)
+        {
+
+            Roles.AddUserToRole(id, "BannedUser");
+            return View("Index");
+        }
+
+        [Authorize(Roles = "Moderator")]
+        public ActionResult Unban(string id)
+        {
+            Roles.RemoveUserFromRole(id, "BannedUser");
+            return View("Index");
         }
     }
 }

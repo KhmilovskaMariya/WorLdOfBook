@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNet.Identity;
+﻿using Core.Common;
+using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using System.Collections.Generic;
 using System.Security.Claims;
@@ -10,7 +11,9 @@ namespace Core.Models
     {
         public virtual List<Book> Books { get; set; }
         public virtual List<Comment> Comments { get; set; }
-        public bool IsAuthor { get; set; }
+        public UserStatus Status { get; set; }
+        public bool IsBanned { get; set; }
+        public virtual File Avatar { get; set; }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
