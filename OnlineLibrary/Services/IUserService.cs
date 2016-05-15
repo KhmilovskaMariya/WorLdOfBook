@@ -8,5 +8,6 @@ namespace Services
         List<ApplicationUser> GetAllUsers();
         void DeleteUser(string userId);
         ApplicationUser GetUser(string userId);
+        void ChangeStatus(string userid);
     }
 }

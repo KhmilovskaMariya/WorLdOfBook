@@ -1,4 +1,5 @@
-﻿using Core.Models;
+﻿using Core.Common;
+using Core.Models;
 using Data;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,8 +29,14 @@ namespace Services
 
         public ApplicationUser GetUser(string userId)
         {
+            return _userRepository.GetById(userId); ;
+        }
+
+        public void ChangeStatus(string userId)
+        {
             var user = _userRepository.GetById(userId);
-            return user;
+            user.Status = UserStatus.None;
+            _userRepository.Update(user);
         }
     }
 }
