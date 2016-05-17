@@ -23,11 +23,6 @@ namespace OnlineLibrary.Controllers
             return View(_userViewModelService.GetUser(User.Identity.GetUserId()));
         }
 
-        public ActionResult GetProfileForModerator()
-        {
-            return View();
-        }
-
         public ActionResult EditProfile()
         {
             return View(_userViewModelService.GetUser(User.Identity.GetUserId()));
@@ -36,6 +31,11 @@ namespace OnlineLibrary.Controllers
         public ActionResult GetProfileForAdmin(string userId)
         {
             return View(_userViewModelService.GetUserForAdmin(userId));
+        }
+
+        public ActionResult GetProfileForModerator(string id)
+        {
+            return View(_userViewModelService.GetReaderForModerator(id));
         }
     }
 }

@@ -14,7 +14,7 @@
     {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.UserName)
+                <a href="@Url.Action("GetProfileForModerator", "Author", new { userId = item.Id })">@Html.DisplayFor(modelItem => item.UserName)</a>
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Email)

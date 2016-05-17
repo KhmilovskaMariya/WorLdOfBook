@@ -71,5 +71,18 @@ namespace ModelServices
             book.Rating = (int)book.RatingMarks.Average();
             _bookRepository.Update(book);
         }
+
+        public ModeratorBookPreviewViewModel GetBookForModerator(int id)
+        {
+            return Mapper.Map<Book, ModeratorBookPreviewViewModel>(_bookRepository.GetById(id));
+        }
+
+        public List<SearchBookViewModel> SearchBook(string query)
+        {
+            var aa = Mapper.Map<IEnumerable<Book>, List<SearchBookViewModel>>(_bookRepository.Set.Where(b => b.Status == BookStatus.Confirmed)).Where(b => b.Title.Contains(query)).ToList();
+            var bb = aa;
+
+            return Mapper.Map<IEnumerable<Book>, List<SearchBookViewModel>>(_bookRepository.Set.Where(b => b.Status == BookStatus.Confirmed)).Where(b => b.Title.Contains(query)).ToList();
+        }
     }
 }

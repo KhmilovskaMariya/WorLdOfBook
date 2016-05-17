@@ -1,4 +1,5 @@
-﻿using Core.Models;
+﻿using Core.Common;
+using Core.Models;
 using System.Collections.Generic;
 
 namespace Core.ViewModels
@@ -9,6 +10,5 @@ namespace Core.ViewModels
         public string UserName { get; set; }
         public string Email { get; set; }
         public bool IsBanned { get; set; }
-        public List<Comment> Comments { get; set; }
     }
 }

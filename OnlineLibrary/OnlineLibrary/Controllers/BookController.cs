@@ -97,5 +97,10 @@ namespace OnlineLibrary.Controllers
             _commentViewModelService.CommentBook(model);
             return RedirectToAction("Book", new { id = model.BookId });
         }
+
+        public ActionResult GetBookForModerator(int id)
+        {
+            return View(_bookViewModelService.GetBookForModerator(id));
+        }
     }
 }

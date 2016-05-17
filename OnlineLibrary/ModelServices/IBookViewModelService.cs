@@ -16,5 +16,7 @@ namespace ModelServices
         List<PopularBookViewModel> GetMostPopularBooks(int count);
         BookViewModel GetBook(int id);
         void RateBook(int id, int rateMark);
+        ModeratorBookPreviewViewModel GetBookForModerator(int id);
+        List<SearchBookViewModel> SearchBook(string query);
     }
 }

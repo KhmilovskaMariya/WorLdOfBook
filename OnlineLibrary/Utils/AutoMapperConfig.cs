@@ -29,6 +29,12 @@ namespace Utils
                 cfg.CreateMap<CommentViewModel, Comment>();
                 cfg.CreateMap<Comment, CommentViewModel>();
                 cfg.CreateMap<ApplicationUser, AdminUserProfileViewModel>();
+                cfg.CreateMap<ApplicationUser, ReaderModeratorProfileViewModel>();
+                cfg.CreateMap<Book, ModeratorBookPreviewViewModel>()
+                    .ForMember(d => d.Author, opt => opt.MapFrom(src => src.Users.FirstOrDefault(u => u.Status == UserStatus.Author)));
+                cfg.CreateMap<ApplicationUser, AuthorModeratorProfileViewModel>();
+                cfg.CreateMap<Book, SearchBookViewModel>()
+                    .ForMember(d => d.Author, opt => opt.MapFrom(src => src.Users.FirstOrDefault(u => u.Status == UserStatus.Author)));
             });
         }
     }

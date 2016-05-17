@@ -28,5 +28,10 @@ namespace OnlineLibrary.Controllers
         {
             return PartialView(_bookViewModelService.GetAllAuthorsBook(userId));
         }
+
+        public ActionResult GetProfileForModerator(string userId)
+        {
+            return View(_userViewModelService.GetAuthorForModerator(userId));
+        }
     }
 }

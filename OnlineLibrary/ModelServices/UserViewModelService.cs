@@ -30,5 +30,15 @@ namespace ModelServices
         {
             return Mapper.Map<ApplicationUser, AdminUserProfileViewModel>(_userRepository.GetById(userId));
         }
+
+        public ReaderModeratorProfileViewModel GetReaderForModerator(string userId)
+        {
+            return Mapper.Map<ApplicationUser, ReaderModeratorProfileViewModel>(_userRepository.GetById(userId));
+        }
+
+        public AuthorModeratorProfileViewModel GetAuthorForModerator(string userId)
+        {
+            return Mapper.Map<ApplicationUser, AuthorModeratorProfileViewModel>(_userRepository.GetById(userId));
+        }
     }
 }
