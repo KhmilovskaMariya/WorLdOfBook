@@ -17,6 +17,7 @@ namespace ModelServices
         private readonly IRepository<ApplicationUser> _userRepository;
         private readonly IDbContext _dbContext;
         private readonly IRepository<File> _fileRepository;
+        public int PageSize = 4;
 
         public BookViewModelService(IRepository<Book> bookRepository, IRepository<ApplicationUser> userRepository,
             IDbContext dbContext, IRepository<File> fileRepository)
@@ -41,7 +42,28 @@ namespace ModelServices
         {
             return Mapper.Map<List<Book>, List<AuthorBookViewModel>>(_userRepository.GetById(userId).Books);
         }
-
+        public List<Book> GetAllBooks()
+        {
+            return _bookRepository.GetAll();
+        }
+        public PagingBookViewModel Pagination(int page =1)
+        {
+            PagingBookViewModel model = new PagingBookViewModel
+            {
+                Books = _bookRepository.GetAll()
+.OrderBy(p => p.Id)
+.Skip((page - 1) * PageSize)
+.Take(PageSize),
+                PagingInfo = new PagingInfo
+                {
+                    CurrentPage = page,
+                    ItemsPerPage = PageSize,
+                    TotalItems = _bookRepository.Count()
+                }
+            };
+            return model; 
+        }
+        
         public List<ModeratorBookViewModel> GetAllBooksForModerators()
         {
             return Mapper.Map<IEnumerable<Book>, List<ModeratorBookViewModel>>(_bookRepository.Set.Where(b => b.Status == BookStatus.New));
@@ -54,10 +76,10 @@ namespace ModelServices
             _bookRepository.Update(book);
         }
 
-        public List<PopularBookViewModel> GetMostPopularBooks(int count)
-        {
-            return Mapper.Map<IEnumerable<Book>, List<PopularBookViewModel>>(_bookRepository.Set.Where(b => b.Status == BookStatus.Confirmed).OrderBy(b => b.Rating).Take(count));
-        }
+        //public List<PopularBookViewModel> GetMostPopularBooks(int count)
+        //{
+        //    return Mapper.Map<IEnumerable<Book>, List<PopularBookViewModel>>(_bookRepository.Set.Where(b => b.Status == BookStatus.Confirmed).OrderBy(b => b.Rating).Take(count));
+        //}
 
         public BookViewModel GetBook(int id)
         {

@@ -2,6 +2,7 @@
 using Microsoft.AspNet.Identity.EntityFramework;
 using System.Data.Entity;
 
+
 namespace Data
 {
     public class LibraryContext : IdentityDbContext<ApplicationUser>, IDbContext

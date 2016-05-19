@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Core.Models;
+using System;
+using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.Entity.Validation;
 using System.Linq;
@@ -21,7 +23,14 @@ namespace Data
         {
             return this.Entities.Find(id);
         }
-
+        public List<T> GetAll( )
+        {
+            return this.Entities.ToList<T>() ;
+        }
+        public int Count()
+        {
+            return this.Entities.Count();
+        }
         public void Insert(T entity)
         {
             try

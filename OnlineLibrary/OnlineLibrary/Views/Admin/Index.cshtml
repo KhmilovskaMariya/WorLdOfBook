@@ -28,9 +28,20 @@
                     <a href="@Url.Action("GetProfileForAdmin", "Reader", new { userId = item.Id })">@Html.DisplayFor(modelItem => item.UserName)</a>
                 </td>
                 <td>
-                    @Html.ActionLink("Give Moderator Rights", "GiveRights", new { id = item.Id, isModerator = true }) |
-                    @Html.ActionLink("Give Admin Rights", "GiveRights", new { id = item.Id, isModerator = false }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                    <div class="container">
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-primary" style="color:white">@Html.ActionLink("Delete", "Delete", new { id = item.Id })</button>
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                                    GiveRights <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="#">@Html.ActionLink("Give Moderator Rights", "GiveRights", new { id = item.Id, isModerator = true })</a></li>
+                                    <li><a href="#">@Html.ActionLink("Give Admin Rights", "GiveRights", new { id = item.Id, isModerator = false })</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </td>
             </tr>
         }

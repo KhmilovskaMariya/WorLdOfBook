@@ -1,0 +1,43 @@
+﻿
+@model IEnumerable<Core.Models.Book>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Language)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.YearOfPublication)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Edition)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Language)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.YearOfPublication)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Edition)
+            </td>
+            <td>
+                <img src="~/File?id=@item.Image.FileId" alt="avatar" />
+            </td>
+        </tr>
+    }
+
+</table>
+

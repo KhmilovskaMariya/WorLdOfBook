@@ -1,0 +1,25 @@
+﻿
+@model Core.ViewModels.PagingBookViewModel
+@{
+    ViewBag.Title = "Books";
+}
+@foreach (var p in Model.Books)
+{
+    <div class="well">
+        <span class="pull-right">
+            <img src="~/File?id=@p.Image.FileId" width="200" height="150" alt="avatar" />
+        </span>
+        <h3>
+            <strong>@p.Title</strong>
+           
+        </h3>
+        
+        <span class="lead"> @p.Language</span>
+        <span class="lead"><br> @p.YearOfPublication</span>
+        <span class="lead"> <br>@p.Edition</span>
+        @*<span class="lead"> </span>*@    
+    </div>
+}
+    <div class="btn-group pull-right">
+        @Html.PageLinks(Model.PagingInfo, x => Url.Action("List", new{ page = x}))
+    </div>
