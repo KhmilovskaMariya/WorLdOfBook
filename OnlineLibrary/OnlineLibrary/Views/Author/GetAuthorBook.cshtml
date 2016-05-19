@@ -1,0 +1,62 @@
+﻿@model Core.ViewModels.AuthorBookViewModel
+
+<div class="container">
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Language)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Language)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Edition)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Edition)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.YearOfPublication)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.YearOfPublication)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Rating)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Rating)
+        </dd>
+        @if (Model.Comments.Count != 0)
+        {
+            <dt>
+                Comments
+            </dt>
+            foreach (var item in Model.Comments)
+            {
+                <dd>
+                    @item.Text @item.PostTime @item.User.Name @item.User.Surname
+                </dd>
+            }
+        }
+        <dd>
+            <img src="~/File?id=@Model.Image.FileId" alt="avatar" />
+        </dd>
+        @Html.ActionLink("Comment Book", "CommentBookAuthor", "Book", new { bookId = Model.Id }, null)
+    </dl>
+</div>
