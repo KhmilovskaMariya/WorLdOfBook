@@ -14,6 +14,7 @@ namespace Core.ViewModels
         public string Language { get; set; }
         public string Edition { get; set; }
         public int YearOfPublication { get; set; }
+        public int Rating { get; set; }
         public virtual File Image { get; set; }
         public virtual List<Comment> Comments { get; set; }
     }

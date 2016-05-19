@@ -18,5 +18,6 @@ namespace ModelServices
         void RateBook(int id, int rateMark);
         ModeratorBookPreviewViewModel GetBookForModerator(int id);
         List<SearchBookViewModel> SearchBook(string query);
+        AuthorBookViewModel GetAuthorOwnBook(int id);
     }
 }

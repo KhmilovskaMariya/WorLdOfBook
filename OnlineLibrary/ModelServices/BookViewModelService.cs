@@ -44,7 +44,8 @@ namespace ModelServices
 
         public List<ModeratorBookViewModel> GetAllBooksForModerators()
         {
-            return Mapper.Map<IEnumerable<Book>, List<ModeratorBookViewModel>>(_bookRepository.Set.Where(b => b.Status == BookStatus.New));
+            var result = Mapper.Map<IEnumerable<Book>, List<ModeratorBookViewModel>>(_bookRepository.Set.Where(b => b.Status == BookStatus.New));
+            return result;
         }
 
         public void AcceptDeclineBook(int id, bool isAccepted)
@@ -67,6 +68,10 @@ namespace ModelServices
         public void RateBook(int id, int rateMark)
         {
             var book = _bookRepository.GetById(id);
+            if(book.RatingMarks == null)
+            {
+                book.RatingMarks = new List<int>();
+            }
             book.RatingMarks.Add(rateMark);
             book.Rating = (int)book.RatingMarks.Average();
             _bookRepository.Update(book);
@@ -79,10 +84,12 @@ namespace ModelServices
 
         public List<SearchBookViewModel> SearchBook(string query)
         {
-            var aa = Mapper.Map<IEnumerable<Book>, List<SearchBookViewModel>>(_bookRepository.Set.Where(b => b.Status == BookStatus.Confirmed)).Where(b => b.Title.Contains(query)).ToList();
-            var bb = aa;
-
             return Mapper.Map<IEnumerable<Book>, List<SearchBookViewModel>>(_bookRepository.Set.Where(b => b.Status == BookStatus.Confirmed)).Where(b => b.Title.Contains(query)).ToList();
+        }
+
+        public AuthorBookViewModel GetAuthorOwnBook(int id)
+        {
+            return Mapper.Map<Book, AuthorBookViewModel>(_bookRepository.GetById(id));
         }
     }
 }

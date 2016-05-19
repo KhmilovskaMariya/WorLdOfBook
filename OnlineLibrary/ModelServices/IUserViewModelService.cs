@@ -13,5 +13,6 @@ namespace ModelServices
         AdminUserProfileViewModel GetUserForAdmin(string userId);
         ReaderModeratorProfileViewModel GetReaderForModerator(string userId);
         AuthorModeratorProfileViewModel GetAuthorForModerator(string userId);
+        void EditAuthorProfile(UserProfileViewModel model);
     }
 }

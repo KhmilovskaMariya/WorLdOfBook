@@ -40,5 +40,15 @@ namespace ModelServices
         {
             return Mapper.Map<ApplicationUser, AuthorModeratorProfileViewModel>(_userRepository.GetById(userId));
         }
+
+        public void EditAuthorProfile(UserProfileViewModel model)
+        {
+            var result = _userRepository.GetById(model.Id);
+            result.Age = model.Age;
+            result.Name = model.Name;
+            result.Surname = model.Surname;
+            result.Avatar = model.Avatar == null ? result.Avatar : model.Avatar;
+            _userRepository.Update(result);
+        }
     }
 }

@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNet.Identity;
+﻿using Core.Models;
+using Core.ViewModels;
+using Microsoft.AspNet.Identity;
 using ModelServices;
 using System;
 using System.Collections.Generic;
@@ -32,6 +34,32 @@ namespace OnlineLibrary.Controllers
         public ActionResult GetProfileForModerator(string userId)
         {
             return View(_userViewModelService.GetAuthorForModerator(userId));
+        }
+
+        [HttpPost]
+        public ActionResult Edit(UserProfileViewModel model, HttpPostedFileBase upload)
+        {
+            if (upload != null && upload.ContentLength > 0)
+            {
+                var avatar = new File
+                {
+                    FileName = System.IO.Path.GetFileName(upload.FileName),
+                    ContentType = upload.ContentType
+                };
+                using (var reader = new System.IO.BinaryReader(upload.InputStream))
+                {
+                    avatar.Content = reader.ReadBytes(upload.ContentLength);
+                }
+                model.Avatar = avatar;
+            }
+            _userViewModelService.EditAuthorProfile(model);
+            return RedirectToAction("Profile");
+        }
+
+        [HttpGet]
+        public ActionResult GetAuthorBook(int id)
+        {
+            return View(_bookViewModelService.GetAuthorOwnBook(id));
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using Core.Common;
 using Core.Models;
+using Core.ViewModels;
 using Data;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
@@ -45,6 +46,11 @@ namespace OnlineLibrary.Controllers
             return View();
         }
 
+        public ActionResult HomePage()
+        {
+            return View("Index");
+        }
+
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
@@ -61,13 +67,15 @@ namespace OnlineLibrary.Controllers
 
         public ActionResult Search()
         {
-            return View();
+            ViewBag.Flag = "True";
+            return View(new List<SearchBookViewModel>());
         }
 
         [HttpPost]
-        public PartialViewResult BookSearch(string name)
+        public ActionResult BookSearch(string query = "")
         {
-            return PartialView(new List<int>() { 1, 2, 3, 4 });
+            ViewBag.Flag = query == "" ? "True" : "False";
+            return View("Search", _bookViewModelService.SearchBook(query));
         }
     }
 }

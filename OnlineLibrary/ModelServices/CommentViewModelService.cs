@@ -38,6 +38,14 @@ namespace ModelServices
             comment.Book = book;
             comment.User = user;
             comment.PostTime = DateTime.Now;
+            if(user.Comments == null)
+            {
+                user.Comments = new List<Comment>();
+            }
+            if(book.Comments == null)
+            {
+                book.Comments = new List<Comment>();
+            }
             user.Comments.Add(comment);
             book.Comments.Add(comment);
             _commentRepository.Insert(comment);

@@ -152,7 +152,9 @@ namespace OnlineLibrary.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email, Status = model.IsAuthor ? UserStatus.Author : UserStatus.Reader };
+                var user = new ApplicationUser { UserName = model.Email,
+                    Email = model.Email, Status = model.IsAuthor ? UserStatus.Author : UserStatus.Reader
+                    ,Age = model.Age, Name = model.Name, Surname = model.Surname };
                 user.Books = new List<Book>();
                 user.Comments = new List<Comment>();
                 if (upload != null && upload.ContentLength > 0)

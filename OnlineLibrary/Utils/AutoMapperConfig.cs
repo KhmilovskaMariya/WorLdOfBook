@@ -15,6 +15,7 @@ namespace Utils
                 cfg.CreateMap<ApplicationUser, AuthorModeratorViewModel>();
                 cfg.CreateMap<ApplicationUser, AdminUserViewModel>();
                 cfg.CreateMap<ApplicationUser, UserProfileViewModel>();
+                cfg.CreateMap<UserProfileViewModel, ApplicationUser>();
                 cfg.CreateMap<AddBookViewModel, Book>()
                     .ForMember(d => d.Status, opt => opt.MapFrom(s => BookStatus.New))
                     .ForMember(d => d.Comments, opt => opt.MapFrom(s => new List<Comment>()))

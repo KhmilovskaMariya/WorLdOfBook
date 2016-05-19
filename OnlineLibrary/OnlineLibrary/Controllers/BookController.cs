@@ -1,5 +1,6 @@
 ﻿using Core.Models;
 using Core.ViewModels;
+using Microsoft.AspNet.Identity;
 using ModelServices;
 using Services;
 using System;
@@ -86,9 +87,10 @@ namespace OnlineLibrary.Controllers
         }
 
         [HttpGet]
-        public ActionResult CommentBook(int bookId, string userId)
+        public ActionResult CommentBook(int bookId)
         {
-            return View(new CommentViewModel { UserId = userId, BookId = bookId });
+            var user = User.Identity.GetUserId();
+            return View(new CommentViewModel { UserId = user, BookId = bookId });
         }
 
         [HttpPost]
@@ -96,6 +98,20 @@ namespace OnlineLibrary.Controllers
         {
             _commentViewModelService.CommentBook(model);
             return RedirectToAction("Book", new { id = model.BookId });
+        }
+
+        [HttpGet]
+        public ActionResult CommentBookAuthor(int bookId)
+        {
+            var user = User.Identity.GetUserId();
+            return View(new CommentViewModel { UserId = user, BookId = bookId });
+        }
+
+        [HttpPost]
+        public ActionResult CommentBookAuthor(CommentViewModel model)
+        {
+            _commentViewModelService.CommentBook(model);
+            return RedirectToAction("Profile", "Author", new { id = model.BookId });
         }
 
         public ActionResult GetBookForModerator(int id)

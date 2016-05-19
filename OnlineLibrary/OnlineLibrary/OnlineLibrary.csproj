@@ -286,7 +286,9 @@
     <Content Include="Views\Book\GetBookForModerator.cshtml" />
     <Content Include="Views\Author\GetProfileForModerator.cshtml" />
     <Content Include="Views\Home\Search.cshtml" />
-    <Content Include="Views\Home\BookSearch.cshtml" />
+    <Content Include="Views\Book\CommentBook.cshtml" />
+    <Content Include="Views\Author\GetAuthorBook.cshtml" />
+    <Content Include="Views\Book\CommentBookAuthor.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
