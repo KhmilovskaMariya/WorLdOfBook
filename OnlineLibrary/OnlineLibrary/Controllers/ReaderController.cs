@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNet.Identity;
+﻿using Core.Models;
+using Core.ViewModels;
+using Microsoft.AspNet.Identity;
 using ModelServices;
 using System;
 using System.Collections.Generic;
@@ -8,6 +10,7 @@ using System.Web.Mvc;
 
 namespace OnlineLibrary.Controllers
 {
+    [InitializeSimpleMembershipAttribute.Deny(Roles = "BannedUser", ErrorViewName = "Banned")]
     public class ReaderController : Controller
     {
         private readonly IUserViewModelService _userViewModelService;
@@ -36,6 +39,26 @@ namespace OnlineLibrary.Controllers
         public ActionResult GetProfileForModerator(string id)
         {
             return View(_userViewModelService.GetReaderForModerator(id));
+        }
+
+        [HttpPost]
+        public ActionResult Edit(UserProfileViewModel model, HttpPostedFileBase upload)
+        {
+            if (upload != null && upload.ContentLength > 0)
+            {
+                var avatar = new File
+                {
+                    FileName = System.IO.Path.GetFileName(upload.FileName),
+                    ContentType = upload.ContentType
+                };
+                using (var reader = new System.IO.BinaryReader(upload.InputStream))
+                {
+                    avatar.Content = reader.ReadBytes(upload.ContentLength);
+                }
+                model.Avatar = avatar;
+            }
+            _userViewModelService.EditAuthorProfile(model);
+            return RedirectToAction("Profile");
         }
     }
 }

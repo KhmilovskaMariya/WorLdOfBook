@@ -1,9 +1,9 @@
 ﻿@model IEnumerable<Core.ViewModels.SearchBookViewModel>
-<div>
+<div class="container">
     @using (Html.BeginForm("BookSearch", "Home", FormMethod.Post, new { @class = "form-horizontal" }))
     {
         <input type="text" name="query" />
-        <input type="submit" value="Search" />
+        <input class="btn-success" type="submit" value="Search" />
     }
     <div id="results">
         @if (Model.Count() == 0 && ViewBag.Flag == "False")
@@ -14,31 +14,20 @@
         {
             foreach (var item in Model)
             {
-                <div>
-                    @Html.DisplayFor(modelItem => item.Title)
+                <div class="well">
+                    <span class="pull-right">
+                        <img src="~/File?id=@item.Image.FileId" width="200" height="150" alt="avatar" />
+                    </span>
+                    <h3>
+                        <strong><a href="@Url.Action("Book", "Book", new { id = item.Id })">@item.Title</strong>
+
+                    </h3>
+
+                    <span class="lead"> @item.Language</span>
+                    <span class="lead"><br> @item.YearOfPublication</span>
+                    <span class="lead"> <br>@item.Edition</span>
+                    <span class="lead"> <br>@item.Author.Name @item.Author.Surname</span>
                 </div>
-
-                <div>
-                    @Html.DisplayFor(modelItem => item.Language)
-                </div>
-
-                <div>
-                    @Html.DisplayFor(modelItem => item.Edition)
-                </div>
-
-                    <div>
-                        @Html.DisplayFor(modelItem => item.YearOfPublication)
-                    </div>
-
-                    <div>
-                        @Html.DisplayFor(modelItem => item.Rating)
-                    </div>
-                    <div>
-                        @Html.DisplayFor(model => item.Author.UserName)
-                    </div>
-                    <div>
-                        <img src="~/File?id=@item.Image.FileId" alt="avatar" />
-                    </div>
             }
         }
     </div>

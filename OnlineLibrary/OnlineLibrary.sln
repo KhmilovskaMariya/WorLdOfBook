@@ -27,6 +27,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestHelpers", "TestHelpers\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utils", "Utils\Utils.csproj", "{434D890F-5D66-430D-BDE6-F98E96D3BAD0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControllerTests", "ControllerTests\ControllerTests.csproj", "{A1775AF7-9295-4164-A117-B4C29BFAEB08}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -61,6 +63,10 @@ Global
 		{434D890F-5D66-430D-BDE6-F98E96D3BAD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{434D890F-5D66-430D-BDE6-F98E96D3BAD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{434D890F-5D66-430D-BDE6-F98E96D3BAD0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1775AF7-9295-4164-A117-B4C29BFAEB08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1775AF7-9295-4164-A117-B4C29BFAEB08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1775AF7-9295-4164-A117-B4C29BFAEB08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1775AF7-9295-4164-A117-B4C29BFAEB08}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -71,5 +77,6 @@ Global
 		{51D79705-D61A-41B6-86EF-AA6847B0293D} = {421C6A43-A336-450E-A56D-33572FCCF1E2}
 		{BCF35CC2-D24F-4671-BFDD-2BB7760B341D} = {421C6A43-A336-450E-A56D-33572FCCF1E2}
 		{62328D95-63F3-411F-A4C6-6D2E407EFC48} = {5803DAB1-33CB-45EF-AC76-786F7BC645D6}
+		{A1775AF7-9295-4164-A117-B4C29BFAEB08} = {BCF35CC2-D24F-4671-BFDD-2BB7760B341D}
 	EndGlobalSection
 EndGlobal

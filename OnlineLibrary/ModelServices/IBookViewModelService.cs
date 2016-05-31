@@ -1,4 +1,5 @@
-﻿using Core.ViewModels;
+﻿using Core.Models;
+using Core.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,11 +14,16 @@ namespace ModelServices
         List<AuthorBookViewModel> GetAllAuthorsBook(string userId);
         List<ModeratorBookViewModel> GetAllBooksForModerators();
         void AcceptDeclineBook(int id, bool isAccepted);
-        List<PopularBookViewModel> GetMostPopularBooks(int count);
+        //List<PopularBookViewModel> GetMostPopularBooks(int count);
+        List<Book> GetAllBooks();
         BookViewModel GetBook(int id);
         void RateBook(int id, int rateMark);
         ModeratorBookPreviewViewModel GetBookForModerator(int id);
         List<SearchBookViewModel> SearchBook(string query);
         AuthorBookViewModel GetAuthorOwnBook(int id);
+        PagingBookViewModel Pagination(int page = 1);
+        
+            
+
     }
 }

@@ -3,6 +3,7 @@
 
 @using (Html.BeginForm("RateBook", "Book", FormMethod.Post, new { @class = "form-horizontal" }))
 {
+    <div class="container">
     @Html.AntiForgeryToken()
     @Html.HiddenFor(m => m.Id)
     <h4>Rate this book.</h4>
@@ -19,6 +20,7 @@
                         <input type="submit" class="btn btn-default" value="Rate" />
                     </div>
                 </div>
+        </div>
 }
 
 @section Scripts {

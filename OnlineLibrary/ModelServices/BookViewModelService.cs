@@ -17,6 +17,7 @@ namespace ModelServices
         private readonly IRepository<ApplicationUser> _userRepository;
         private readonly IDbContext _dbContext;
         private readonly IRepository<File> _fileRepository;
+        public int PageSize = 4;
 
         public BookViewModelService(IRepository<Book> bookRepository, IRepository<ApplicationUser> userRepository,
             IDbContext dbContext, IRepository<File> fileRepository)
@@ -30,18 +31,41 @@ namespace ModelServices
         public void AddBook(AddBookViewModel model)
         {
             var book = Mapper.Map<AddBookViewModel, Book>(model);
+            book.Status = BookStatus.New;
             var author = _userRepository.GetById(model.AuthorId);
             book.Users = new List<ApplicationUser>();
             book.Users.Add(author);
             author.Books.Add(book);
             _bookRepository.Insert(Mapper.Map<AddBookViewModel, Book>(model));
+            _dbContext.SaveChanges();
         }
 
         public List<AuthorBookViewModel> GetAllAuthorsBook(string userId)
         {
             return Mapper.Map<List<Book>, List<AuthorBookViewModel>>(_userRepository.GetById(userId).Books);
         }
-
+        public List<Book> GetAllBooks()
+        {
+            return _bookRepository.GetAll();
+        }
+        public PagingBookViewModel Pagination(int page =1)
+        {
+            PagingBookViewModel model = new PagingBookViewModel
+            {
+                Books = _bookRepository.GetAll().Where(s => s.Status == BookStatus.Confirmed)
+.OrderBy(p => p.Id)
+.Skip((page - 1) * PageSize)
+.Take(PageSize),
+                PagingInfo = new PagingInfo
+                {
+                    CurrentPage = page,
+                    ItemsPerPage = PageSize,
+                    TotalItems = _bookRepository.Count()
+                }
+            };
+            return model; 
+        }
+        
         public List<ModeratorBookViewModel> GetAllBooksForModerators()
         {
             var result = Mapper.Map<IEnumerable<Book>, List<ModeratorBookViewModel>>(_bookRepository.Set.Where(b => b.Status == BookStatus.New));
@@ -55,10 +79,10 @@ namespace ModelServices
             _bookRepository.Update(book);
         }
 
-        public List<PopularBookViewModel> GetMostPopularBooks(int count)
-        {
-            return Mapper.Map<IEnumerable<Book>, List<PopularBookViewModel>>(_bookRepository.Set.Where(b => b.Status == BookStatus.Confirmed).OrderBy(b => b.Rating).Take(count));
-        }
+        //public List<PopularBookViewModel> GetMostPopularBooks(int count)
+        //{
+        //    return Mapper.Map<IEnumerable<Book>, List<PopularBookViewModel>>(_bookRepository.Set.Where(b => b.Status == BookStatus.Confirmed).OrderBy(b => b.Rating).Take(count));
+        //}
 
         public BookViewModel GetBook(int id)
         {

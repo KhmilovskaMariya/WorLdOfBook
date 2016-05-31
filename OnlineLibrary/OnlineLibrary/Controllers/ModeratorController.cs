@@ -91,9 +91,10 @@ namespace OnlineLibrary.Controllers
         }
 
         [Authorize(Roles = "Moderator")]
-        public void DeleteComment(int id)
+        public ActionResult DeleteComment(int id)
         {
             _commentService.DeleteComment(id);
+            return View("Index");
         }
     }
 }

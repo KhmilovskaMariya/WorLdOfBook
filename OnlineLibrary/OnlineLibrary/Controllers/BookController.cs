@@ -11,11 +11,13 @@ using System.Web.Mvc;
 
 namespace OnlineLibrary.Controllers
 {
+    [InitializeSimpleMembershipAttribute.Deny(Roles = "BannedUser", ErrorViewName = "Banned")]
     public class BookController : Controller
     {
         private readonly IUserService _userService;
         private readonly IBookViewModelService _bookViewModelService;
         private readonly ICommentViewModelService _commentViewModelService;
+        public int PageSize = 4;
 
         public BookController(IUserService userService, IBookViewModelService bookViewModelService,
             ICommentViewModelService commentViewModelService)
@@ -63,10 +65,10 @@ namespace OnlineLibrary.Controllers
         }
 
 
-        public PartialViewResult MostPopularBooks()
-        {
-            return PartialView(_bookViewModelService.GetMostPopularBooks(3));
-        }
+        //public PartialViewResult MostPopularBooks()
+        //{
+        //    return PartialView(_bookViewModelService.GetMostPopularBooks(3));
+        //}
 
         public ActionResult Book(int id)
         {
@@ -117,6 +119,11 @@ namespace OnlineLibrary.Controllers
         public ActionResult GetBookForModerator(int id)
         {
             return View(_bookViewModelService.GetBookForModerator(id));
+        }
+        public ViewResult List(int page = 1)
+        {
+            return View(_bookViewModelService.Pagination());
+            
         }
     }
 }

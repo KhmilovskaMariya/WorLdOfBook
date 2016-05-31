@@ -98,6 +98,7 @@
     <Compile Include="Models\Book.cs" />
     <Compile Include="Models\Comment.cs" />
     <Compile Include="Models\File.cs" />
+    <Compile Include="Models\PagingInfo.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\AccountViewModels.cs" />
@@ -113,6 +114,7 @@
     <Compile Include="ViewModels\ModeratorBookPreviewViewModel.cs" />
     <Compile Include="ViewModels\ModeratorBookViewModel.cs" />
     <Compile Include="ViewModels\ModeratorCommentViewModel.cs" />
+    <Compile Include="ViewModels\PagingBookViewModel.cs" />
     <Compile Include="ViewModels\PopularBookViewModel.cs" />
     <Compile Include="ViewModels\RateViewModel.cs" />
     <Compile Include="ViewModels\ReaderModeratorProfileViewModel.cs" />

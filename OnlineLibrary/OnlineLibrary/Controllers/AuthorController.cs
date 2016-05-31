@@ -7,9 +7,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 
 namespace OnlineLibrary.Controllers
 {
+    [InitializeSimpleMembershipAttribute.Deny(Roles = "BannedUser", ErrorViewName = "Banned")]
     public class AuthorController : Controller
     {
         private readonly IUserViewModelService _userViewModelService;

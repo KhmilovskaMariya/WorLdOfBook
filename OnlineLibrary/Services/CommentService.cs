@@ -19,7 +19,10 @@ namespace Services
 
         public void DeleteComment(int id)
         {
-            _commentRepository.Delete(_commentRepository.GetById(id));
+            var comment = _commentRepository.GetById(id);
+            comment.Book.Comments.Remove(comment);
+            comment.User.Comments.Remove(comment);
+            _commentRepository.Delete(comment);
         }
     }
 }

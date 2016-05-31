@@ -45,6 +45,11 @@ namespace OnlineLibrary.Controllers
             }
             return View();
         }
+        public ActionResult AllBooks()
+        {
+
+            return View(_bookViewModelService.GetAllBooks());
+        }
 
         public ActionResult HomePage()
         {

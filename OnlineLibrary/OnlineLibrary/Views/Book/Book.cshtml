@@ -1,5 +1,6 @@
 ﻿@model Core.ViewModels.BookViewModel
 
+<div class="container">
 <div>
     <hr />
     <dl class="dl-horizontal">
@@ -57,3 +58,4 @@
     @Html.ActionLink("Rate Book", "RateBook", new { id = Model.Id }) |
     @Html.ActionLink("Comment Book", "CommentBook", new { bookId = Model.Id })
 </p>
+</div>
