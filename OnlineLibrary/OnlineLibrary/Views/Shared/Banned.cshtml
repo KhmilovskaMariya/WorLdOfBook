@@ -1,0 +1,25 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Exception</title>
+    <link href='http://fonts.googleapis.com/css?family=Love+Ya+Like+A+Sister' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="~/Resources/ErrorPages/ErrorPagesStyle.css">
+</head>
+<body>
+    <div class="wrap container">
+        <div class="logo">
+            <p>Sorry, but You are banned!</p>
+            <img src="~/Content/Images/sad.png" />
+            <div class="sub">
+                <p><a href=@Url.Action("Login","Account")>Login</a></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
