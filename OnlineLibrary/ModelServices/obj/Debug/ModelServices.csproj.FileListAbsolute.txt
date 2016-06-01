@@ -96,3 +96,4 @@ E:\OnlineLibrary\WorLdOfBook\OnlineLibrary\ModelServices\bin\Debug\ru\System.Web
 E:\OnlineLibrary\WorLdOfBook\OnlineLibrary\ModelServices\bin\Debug\System.Web.Mvc.dll
 E:\OnlineLibrary\WorLdOfBook\OnlineLibrary\ModelServices\bin\Debug\System.Web.Mvc.xml
 E:\OnlineLibrary\WorLdOfBook\OnlineLibrary\ModelServices\bin\Debug\ModelServices.dll.config
+E:\WorLdOfBook\OnlineLibrary\ModelServices\bin\Debug\ModelServices.dll.config
